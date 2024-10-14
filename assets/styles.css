@@ -12,10 +12,11 @@
   padding: 0;
 }
 a {
-  color: var(--color-blue-light);
+  color: var(--color-blue);
+  text-decoration: underline;
 }
 a:hover {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 body {
   font-family: "Open Sans", sans-serif;
