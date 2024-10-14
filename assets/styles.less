@@ -1,0 +1,344 @@
+:root {
+  --color-white: #ffffff;
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-blue: #023750;
+  --color-blue-light: #00adff;
+  --color-red: #ff1d25;
+  scroll-behavior: smooth;
+  scroll-snap-align: start;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: var(--color-blue-light);
+}
+a:hover {
+  opacity: 0.5;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background: var(--color-blue);
+}
+.splash {
+  position: relative;
+  z-index: 999;
+  background: var(--color-blue);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 100%;
+}
+@keyframes opacitychange {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+.splash .container {
+  animation: opacitychange 4s;
+  width: 50%;
+}
+.splash .container h1 {
+  color: var(--color-white-50);
+  font-size: 35px;
+  margin: 30px 0 0;
+}
+.splash a {
+  display: block;
+  width: 100px;
+  position: absolute;
+  bottom: 50px;
+}
+.splash a img {
+  animation: opacitychangeloop 3s infinite;
+  width: 100%;
+}
+@keyframes opacitychangeloop {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+.page {
+  position: relative;
+  z-index: 400;
+  background: var(--color-white);
+}
+.page header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 10px solid var(--color-blue);
+  background: var(--color-white);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+.page header img {
+  height: 36px;
+}
+.page header .menu-trigger {
+  display: none;
+}
+.page header ul {
+  font-size: 20px;
+  text-align: right;
+}
+.page header ul li {
+  display: inline;
+}
+.page header ul li.close {
+  display: none;
+}
+.page header ul li a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+.page header ul li:not(.last-child):after {
+  content: "|";
+  color: var(--color-blue);
+}
+.page .manySections {
+  display: block;
+  margin: 0 auto;
+  max-width: 930px;
+  padding: 100px 25px 0;
+}
+.page .manySections section {
+  margin: 0;
+  padding: 0;
+}
+.page section {
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 100px 25px 0;
+  color: var(--color-blue);
+}
+.page section.first {
+  padding-top: 100px;
+}
+.page section.cols2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+}
+.page section img {
+  margin: 10px 30px;
+}
+.page section .content {
+  margin: 30px;
+}
+.page section .content h1 {
+  font-size: 40px;
+  margin: 13px 0;
+  font-weight: 500;
+}
+.page section .content h2 {
+  font-size: 32px;
+  margin: 13px 0;
+  font-weight: 500;
+}
+.page section .content h3 {
+  font-size: 16px;
+  margin: 13px 0;
+  font-weight: 400;
+}
+.page section .content h4 {
+  font-size: 14px;
+  margin: 13px 0 6px;
+  font-weight: 400;
+}
+.page section .content p {
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.page section .content ul.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.page section .content ul.grid li {
+  display: block;
+}
+.page section .content ul.grid li img {
+  border: 1px solid var(--color-blue-light);
+  width: 100%;
+  margin: 0;
+}
+
+.page footer {
+  background: var(--color-blue);
+  padding: 20px 40px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+}
+.page footer .logo {
+  text-align: center;
+  max-width: 275px;
+  justify-content: flex-start;
+}
+.page footer .logo img {
+  width: 100%;
+}
+.page footer .logo p {
+  font-size: 12px;
+  color: var(--color-white);
+  font-weight: 100;
+}
+.page footer .menu {
+  justify-content: flex-end;
+  text-align: right;
+}
+.page footer .menu .social {
+}
+.page footer .menu .social a {
+  margin: 0 0 10px 20px;
+}
+.page footer .menu ul {
+  list-style: none;
+}
+.page footer .menu ul li {
+  padding: 8px 0 0;
+}
+.page footer .menu ul li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 900px) {
+  .page header img {
+    height: 30px;
+  }
+  .page header ul {
+    font-size: 16px;
+  }
+}
+// @media screen and ((max-width: 760px)
+//     or
+//     ((max-device-width: 480px) and (orientation: portrait))
+//     or
+//     (max-device-width: 640px)
+//     or
+//     ((device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2))
+//     or
+//     ((min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3))) {
+@mqMobile: ~"
+  screen and
+    (
+      (max-width: 760px) or ((max-device-width: 480px) and (orientation: portrait)) or (max-device-width: 640px) or
+        ((device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2)) or
+        ((min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3))
+    )
+";
+@media @mqMobile {
+  .splash .container h1 {
+    font-size: 20px;
+  }
+  .page header .menu-trigger {
+    display: block;
+    cursor: pointer;
+    text-align: right;
+    font-size: 30px;
+    width: 100%;
+    margin-top: -10px;
+    color: var(--color-blue);
+    text-decoration: none;
+  }
+  .page header ul {
+    display: none;
+  }
+  .page header ul.active {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-blue);
+    padding-top: 5px;
+  }
+  .page header ul li {
+    display: block;
+    text-align: left;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  .page header ul li:first-child {
+    padding-top: 50px;
+  }
+  .page header ul li:after {
+    display: none;
+  }
+  .page header ul li span {
+    display: none;
+  }
+  .page header ul li a {
+    display: block;
+    padding: 15px 0;
+    margin: 0 30px;
+    color: var(--color-white);
+    border-bottom: 1px solid var(--color-white);
+  }
+  .page header ul li.close {
+    display: block;
+  }
+  .page header ul li.close a {
+    border: 0;
+    color: var(--color-white);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .page header ul li.close a svg {
+    height: 30px;
+    width: 30px;
+  }
+  .page .manySections section:first-child .content {
+    margin-bottom: 0;
+  }
+  .page .manySections section:last-child .content {
+    margin-top: 0;
+  }
+  .page section img {
+    display: none;
+  }
+  .page section .content ul.grid {
+    display: block;
+  }
+  .page section .content ul.grid li {
+    display: block;
+    padding: 15px 0;
+  }
+  .page section .content ul.grid li img {
+    display: block;
+  }
+  .page footer .logo {
+    max-width: 150px;
+  }
+}
