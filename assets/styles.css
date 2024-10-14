@@ -179,7 +179,7 @@ body {
 }
 .page section .content ul.grid li img {
   border: 1px solid var(--color-blue-light);
-  width: 100%;
+  width: 275px;
   margin: 0;
 }
 .page footer {
@@ -230,6 +230,9 @@ body {
   }
   .page header ul {
     font-size: 16px;
+  }
+  .page section .content ul.grid li img {
+    max-width: 100%;
   }
 }
 @media 
@@ -323,6 +326,8 @@ body {
   }
   .page section .content ul.grid li img {
     display: block;
+    max-width: 275px;
+    margin: 0 auto;
   }
   .page footer .logo {
     max-width: 150px;
